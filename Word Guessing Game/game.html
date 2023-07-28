@@ -1,0 +1,105 @@
+<!-- Step 1: Create the Layout. -->
+<!-- Step 2: Flag key sections with specific id names. These will be replaced by JavaScript -->
+<!-- Step 2: Link to JavaScript (at end of the file) -->
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Country Guessing Game</title>
+    <link rel="icon" href="assets/images/question.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
+    <!-- Bootstrap is used to make game look nicer -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Link to Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+    <link href="style.css" type="text/css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand h1 col" id="game-title">Country Guessing Game</span>
+        <p class="animated flash" id="directions-text">Click any letter to begin...</p>
+        <h1 id="message"></h1>
+    </nav>
+    <br>
+    <p>
+        <audio id="fanfare" controls hidden="true">
+            <source src="Fanfare-sound.mp3" /> This browser does not support our audio
+            format.
+        </audio>
+    </p>
+    <p>
+        <audio id="trombone" controls hidden="true">
+            <source src="Sad_Trombone-Joe_Lamb-665429450.mp3" /> This browser does not
+            support our audio format.
+        </audio>
+    </p>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h2 id="header-text">Guess the country <i class=""></i></h2>
+                        <!-- <p id="directions-text">Click any letter to begin...</p> -->
+                        <br><br>
+                        <h1 id="word-blanks">_ _ _ _ _ _ _ _ _ </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Wrong Guesses</strong>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><i class="fas fa-times"></i> <span id="wrong-guesses"></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Guesses Left</strong>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><span id="guesses-left">9</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Wins</strong>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><span id="win-counter">0</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Losses</strong>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><span id="loss-counter">0</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <script src="game.js" type="text/javascript"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel = "stylesheet" href = "style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class = "container">
+    
+
+    <form id = "registrationForm" onsubmit = "validateForm(event)">
+        <h2>Login Here</h2>
+
+        <label for = "email">Email:</label>
+        <input type = "text" id = "email">
+        <br><br>
+
+        <br><br>
+        <label for = "password">Password:</label>
+        <input type = "password" id = "password">
+        <br><br>
+
+        <center>
+        <input class = "button" type = "submit" value = "LOGIN">
+    </center>
+    </form>
+
+    </div>
+
+    <script>
+
+        var formData = localStorage.getItem('formData');
+        if (formData) {
+            formData = JSON.parse(formData);
+        }
+
+        function validateForm (event) {
+            event.preventDefault();
+
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            if (email == formData.email && password == formData.password)
+            {
+                window.location.href = "Seat reservation form example.html";
+            }else{
+                alert("Wrong username or password")
+            }
+            
+        }
+    </script>
+</body>
+</html>

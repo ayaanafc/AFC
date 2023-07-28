@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel = "stylesheet" href = "Style1.css">
+  <title>Registration Form</title>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class = "container">
+  <form id="registrationForm" onsubmit="validateForm(event)">
+    <h2>Register</h2>
+    <label for="name">Name:</label>
+    <input class = "input" type="text" id="name" >
+    <br><br>
+    <span id="nameError" class="error"></span>
+    <br><br>
+    <label for="email">Email:</label>
+    <input class = "input" type="text" id="email" >
+    <br><br>
+    <span id="emailError" class="error"></span>
+    <br><br>
+    <label for="password">Password:</label>
+    <input class = "input" type="password" id="password" >
+    <br><br>
+    <span id="passwordError" class="error"></span>
+    <br><br>
+    <label for="confirmPassword">Confirm Password:</label>
+    <input class = "input" type="password" id="confirmPassword" >
+    <br><br>
+    <span id="confirmPasswordError" class="error"></span>
+    <br><br>
+    <center>
+    <input class = "button" type="submit" value="REGISTER">
+  </center>
+  </form>
+</div>
+
+  <script>
+    function validateForm(event) {
+      event.preventDefault(); // Prevent form submission
+
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
+
+      // Reset error messages
+      var errorElements = document.getElementsByClassName('error');
+      for (var i = 0; i < errorElements.length; i++) {
+        errorElements[i].innerHTML = '';
+      }
+
+      // Perform validation
+      var isValid = true;
+
+      if (name.trim() === '') {
+        document.getElementById('nameError').innerHTML = 'Name is required.';
+        isValid = false;
+      }
+
+      if (email.trim() === '') {
+        document.getElementById('emailError').innerHTML = 'Email is required.';
+        isValid = false;
+      } else if (!validateEmail(email)) {
+        document.getElementById('emailError').innerHTML = 'Invalid email address.';
+        isValid = false;
+      }
+
+      if (password.trim() === '') {
+        document.getElementById('passwordError').innerHTML = 'Password is required.';
+        isValid = false;
+      }
+
+      if (confirmPassword.trim() === '') {
+        document.getElementById('confirmPasswordError').innerHTML = 'Confirm Password is required.';
+        isValid = false;
+      } else if (password !== confirmPassword) {
+        document.getElementById('confirmPasswordError').innerHTML = 'Passwords do not match.';
+        isValid = false;
+      }
+
+      // If form is valid, submit it
+      if (isValid) {
+        var formData = {
+          name: name,
+          email: email,
+          password: password
+        };
+
+        localStorage.setItem('formData', JSON.stringify(formData));
+        window.location.href = 'login.html';
+      }
+    }
+
+    function validateEmail(email) {
+      // A simple email validation regex pattern
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailPattern.test(email);
+    }
+  </script>
+</body>
+</html>

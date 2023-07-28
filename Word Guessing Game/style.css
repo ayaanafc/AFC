@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background: url("flags.jpg") no-repeat;
+    background-attachment: fixed;
+    background-color: #ffffff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+.navbar {
+    background-color: #28ca28!important;
+}
+
+.navbar-brand {
+    color: #ffffff!important;
+    font-weight: 600;
+    font-size: 40px;
+    margin-left: 55px;
+}
+
+.jumbotron {
+    border-radius: 5px;
+    opacity: 0.95;
+    box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
+}
+
+.card {
+    opacity: 0.95;
+    box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
+}
+
+#header-text,
+#word-blanks {
+    text-align: center;
+}
+
+#directions-text {
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    margin-right: 62px;
+    margin-top: 15px;
+}
+
+#message {
+    color: #ffffff;
+    margin-right: 62px;
+}
+
+.fa-times {
+    color: red;
+}

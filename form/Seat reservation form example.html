@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEAT RESERVATION</title>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <div class = "container">
+    <h2>SEAT RESERVATION</h2>
+    <form id = "reservationform">
+
+        <label for = "name">Name:</label>
+        <input type = "text" id = "name">
+
+        <br><br>
+
+        <label for = "email">Email/Phone Number:</label>
+        <input type = "email" id = "email">
+
+        <br><br>
+
+        <label for = "area">Select the area:</label>
+        <br>
+        <input type = "checkbox" id = "area1" value = "middle">
+        <label for = "middle - $40">middle - $40</label>
+        <br>
+        <input type = "checkbox" id = "area2" value = "behind the goal">
+        <label for = "behind the goal - $30">behind the goal - $30</label>
+        <br>
+        <input type = "checkbox" id = "area3" value = "corner">
+        <label for = "corner - $20">corner - $20</label>
+
+        <br><br>
+
+        <label for = "dropdown">Row:</label>
+        <select id = "dropdown">
+            <option value = "">Select a row:</option>
+            <option value = "1">1</option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5</option>
+            <option value = "6">6</option>
+            <option value = "7">7</option>
+            <option value = "8">8</option>
+            <option value = "9">9</option>
+            <option value = "10">10</option>
+            <option value = "11">11</option>
+            <option value = "12">12</option>
+            <option value = "13">13</option>
+            <option value = "14">14</option>
+            <option value = "15">15</option>
+            <option value = "16">16</option>
+            <option value = "17">17</option>
+            <option value = "18">18</option>
+            <option value = "19">19</option>
+            <option value = "20">20</option>
+        </select>
+       
+        <br><br>
+
+        <label for = "seatnumber">Seat Number:</label>
+        <select id = "seatnumber">
+            <option value = "">Select a Seat</option>
+            <option value = "1">1</option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5</option>
+            <option value = "6">6</option>
+            <option value = "7">7</option>
+            <option value = "8">8</option>
+            <option value = "9">9</option>
+            <option value = "10">10</option>
+            <option value = "11">11</option>
+            <option value = "12"> 12</option>
+        </select>
+
+        <br><br>
+        <center>
+        <input class = "button" type = "submit" value = "SUBMIT">
+    </center>
+    </form>
+
+    <br>
+</div>
+
+<div id = "reservedSeats"></div>
+<script>
+    var reservedSeats = [];
+
+function handleSubmit(event) {
+    event.preventDefault();
+
+    var seatNumber = document.getElementById('seatnumber').value;
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var middle = document.getElementById('area1').checked;
+    var behindthegoal = document.getElementById('area2').checked;
+    var corner = document.getElementById('area3').checked;
+    var row = document.getElementById('dropdown').value;
+
+    if (isSeatReserved(seatNumber)) {
+        alert('Tthis seat is already reserved.');
+    } else {
+        reserveSeat(seatNumber);
+        var reservedSeatsDiv = document.getElementById('reservedSeats');
+        var cost = calculateCost(dropdown);
+        reservedSeatsDiv.innerHTML += 'Reserved Seat: ' + seatNumber + ', Name: ' + name + 'Email: ' + email + ', Area: ';
+        if (area1) reservedSeatsDiv.innerHTML += 'Middle';
+        if (area2) reservedSeatsDiv.innerHTML += 'Behind the goal';
+        if (area3) reservedSeatsDiv.innerHTML += 'Corner';
+        reservedSeatsDiv.innerHTML += 'Dropdown: ' + dropdown + ', Cost: $' + cost + '<br>';
+        
+    }
+}
+
+    function isSeatReserved(seatNumber) {
+        return reservedSeats.includes(seatNumber);
+    }
+
+    function reserveSeat(seatNumber) {
+        reservedSeats.push(seatNumber);
+    }
+
+function calculateCost(option) {
+    switch (option) {
+        case 'a':
+            return 25;
+        case 'b':
+            return 30;
+        case 'c':
+            return 45;
+        default:
+            return 0;
+    }
+}
+
+    var form = document.getElementById('reservationform');
+    form.addEventListener('submit', handleSubmit);
+
+</script>
+
+</body>
+</html>

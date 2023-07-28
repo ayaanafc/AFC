@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Alert Method</h1>
+    <p>Click here.</p>
+    <button onclick = "myFunction()">Try Alert Box</button>
+    <Br>
+    <br>
+    <br>
+    <p>click the button to display the confirm box.</p>
+    <button onclick = "myfunc()">Click here to confirm.</button>
+    <br>
+    <br>
+    <br>
+    <h2>Prompt box</h2>
+    <button onclick = "myfunc2()">Try prompt box</button>
+    <p id = "demo"></p>
+    <script>
+        function myFunction(){
+            alert("⚠️🚨 ALERT! ALERT! ALERT! 🚨⚠️")
+        }
+        function myfunc(){
+            confirm("Do you want to play the game again?")
+        }
+        function myfunc2(){
+            let text;
+            let rating = prompt("How would you describe the website: Terrible, bad, decent, good, or excellent:", "Type here");
+            if (rating == "good" || rating == "excellent" || rating == "decent")
+            {
+                text = "Thank you for rating the website as " + rating + ". We will continue to improve it.";
+            }
+            else 
+            {
+                text = "We're sorry that you found this website to be " + rating;
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
+
+
+
+    </script>
+</body>
+</html>

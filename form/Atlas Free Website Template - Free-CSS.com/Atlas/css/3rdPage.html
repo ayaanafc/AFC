@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Details</title>
+    <style>
+        h2{
+            color: blue;
+        }
+        p{
+            color: blue;
+        }
+        marquee{
+            color: blue;
+        }
+    </style>
+    <center>
+</head>
+<body background="RB.jpg">
+    <div class = "container">
+        <h2>Registration Details</h2>
+        <marquee>Look carefully!</marquee>
+      <script>
+        
+        // Retrieve form data from localStorage
+        var formData = localStorage.getItem('formData');
+        if (formData) {
+          formData = JSON.parse(formData);
+    
+          // Display form data on the page
+          document.write('<p><strong>Name:</strong> ' + formData.name + '</p>');
+          document.write('<p><strong>Email:</strong> ' + formData.email + '</p>');
+          document.write('<p><strong>Password:</strong> ' + formData.password + '</p>');
+        }
+        else {
+          document.write('<p>No registration data found.</p>');
+        }
+    
+        // Clear localStorage
+        localStorage.removeItem('formData');
+      </script>
+      </center>
+      </div>
+
+</body>
+</html>

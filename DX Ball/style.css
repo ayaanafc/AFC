@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #aaf0ac;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.heading{
+    text-align: center;
+}
+
+.heading h2{
+    font-size: 15px;
+    color: darkslategray;
+}
+
+.heading p{
+    font-size: 15px;
+    color: darkslategray;
+}
+
+.heading hr{
+    width: 25%;
+    border-color: darkblue;
+    opacity: .5;
+    margin-left: 37.5%;
+    margin-top: 0px;
+}
+
+canvas{
+    background: #101010;
+    margin-top: 10px;
+    padding: 0;
+    margin-left: 32%;
+}
+
+.btn{
+    margin-top: 30%;
+    text-align: center;
+}
+
+footer{
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+.name{
+    color: red;
+}
+

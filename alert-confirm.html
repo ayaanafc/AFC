@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Alert Method</h1>
+    <p>Click the button to find out who made this website.</p>
+    <button onclick="myFunction()">Find out here</button>
+    <br>
+    <br>
+    <br>
+    <p>click the button to display confirm box</p>
+    <button onclick="myFunction1()">Click here to confirm</button>
+    <br>
+    <br>
+    <br>
+    <h2>Prompt box</h2>
+    <button onclick="myFunction2()">Try Prompt Box</button>
+    <p id="demo"></p>
+    <script>
+        function myFunction(){
+            alert("This website Made by Ayaan Sheikh")
+        }
+        function myFunction1(){
+            confirm("Do you want to buy tickets for the match?")
+        }
+        function myFunction2(){
+            let text;
+            let rating = prompt("How would you rate the website on a scale of 1-5", "0");
+            if (rating == "4" || rating == "5")
+            {
+                text = "Thank you for rating the website a " + rating + "!";
+            }
+            else{
+                text = "Thanks for your feedback, we will keep striving to improve it.";
+            }
+            document.getElementById("demo").innerHTML=text;
+        }
+            
+             
+        
+    </script>
+</body>
+</html>
